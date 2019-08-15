@@ -1,4 +1,4 @@
-from mqtt_service.mqtt_base_listener import MqttBaseListener
+from mqtt_base_listener import MqttBaseListener
 
 
 class MqttMultiTopicListener(MqttBaseListener):

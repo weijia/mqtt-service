@@ -10,6 +10,8 @@ class MqttBaseDevice(object):
         self.server = server
         self.last_will_topic = None
         self.last_will = None
+        self.username = None
+        self.password = None
 
     def loop_start(self):
         self.create_client()
@@ -21,6 +23,8 @@ class MqttBaseDevice(object):
 
     def create_client(self):
         self.client = mqtt.Client()
+        if self.username is not None and self.password is not None:
+            self.client.username_pw_set(self.username, self.password)
         if self.last_will_topic is not None:
             self.client.will_set(self.last_will_topic, self.last_will)
         self.client.on_connect = self.on_connect

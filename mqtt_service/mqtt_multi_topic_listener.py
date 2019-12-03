@@ -15,7 +15,7 @@ class MqttMultiTopicListener(MqttBaseListener):
         # Subscribing in on_connect() means that if we lose the connection and
         # reconnect then subscriptions will be renewed.
         for channel_name in self.get_listening_channel_list():
-            print "subscribed to:", channel_name
+            print("subscribed to:", channel_name)
             client.subscribe(channel_name)
 
     def get_listening_channel_list(self):

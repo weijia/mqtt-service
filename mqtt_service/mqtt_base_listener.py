@@ -17,7 +17,7 @@ class MqttBaseListener(MqttBaseDevice):
         # reconnect then subscriptions will be renewed.
         self.client = client
         self.client.subscribe(self.topic)
-        print "subscribed to:", self.get_topic_name()
+        print("subscribed to:", self.get_topic_name())
 
     def get_topic_name(self):
         return self.topic

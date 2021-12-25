@@ -12,6 +12,7 @@ class MqttBaseDevice(object):
         self.last_will = None
         self.username = None
         self.password = None
+        self.port = 1883
 
     def loop_start(self):
         self.create_client()
@@ -29,7 +30,7 @@ class MqttBaseDevice(object):
             self.client.will_set(self.last_will_topic, self.last_will)
         self.client.on_connect = self.on_connect
         self.client.on_message = self.on_message
-        self.client.connect(self.server, 1883, 60)
+        self.client.connect(self.server, self.port, 60)
         # self.client.connect("iot.eclipse.org", 1883, 60)
         # self.client.connect("192.168.8.1", 1883, 60)
 

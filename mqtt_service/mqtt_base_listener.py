@@ -1,4 +1,4 @@
-from mqtt_base_device import MqttBaseDevice
+from .mqtt_base_device import MqttBaseDevice
 
 
 class MqttBaseListener(MqttBaseDevice):

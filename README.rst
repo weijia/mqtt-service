@@ -22,11 +22,25 @@ Basic framework for creating MQTT services
 * Free software: MIT license
 * Documentation: https://mqtt-service.readthedocs.io.
 
+.. code-block:: python
+    :linenos:
+
+    class ExampleListener(MqttMultiTopicListener):
+        pass
+
+
+    if __name__ == "__main__":
+        l = ExampleListener(listening_channel_list=["listening_channel1", "listening_channel2"])
+        l.loop_forever()
+
+
+
 
 Features
 --------
 
 * TODO
+------
 
 Credits
 -------
